@@ -129,7 +129,7 @@ Then import the public key chain:
 
     gpg --export-ssh-key <uid>
     
-## Setup your MacOS environment to use GPG key
+## Setup your MacOS environment to use GPG key for SSH authentication
     
 Create the files as follows:
     
@@ -144,7 +144,7 @@ Create the files as follows:
     gpgconf --launch gpg-agent
     gpg-connect-agent updatestartuptty /bye > /dev/null
     
-## Signing your git commit with GPG
+## Signing your git commit with GPG 
 
     gpg --list-secret-keys --keyid-format LONG
     (get the signing key id)
