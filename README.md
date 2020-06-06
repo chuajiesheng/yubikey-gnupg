@@ -158,6 +158,16 @@ Update the following lines inside `~/.gitconfig`:
 
 Test a sample commit.
 
+You can check the signature via:
+
+    git log --show-signature -1
+    git show HEAD --show-signature
+
+## Exporting your signature and tell other provider (e.g. GitHub)
+
+    gpg --armor --export <key id>
+    (copy from -----BEGIN PGP PUBLIC KEY BLOCK----- to -----END PGP PUBLIC KEY BLOCK-----)
+
 ## Notes
 
 If you encounter the following in `ssh -vv`:
@@ -175,3 +185,4 @@ Run
 - https://developers.yubico.com/PGP/Card_edit.html
 - https://help.github.com/en/github/authenticating-to-github/checking-for-existing-gpg-keys
 - https://blog.summercat.com/using-a-yubikey-for-ssh-authentication.html
+- https://git-scm.com/book/en/v2/Git-Tools-Signing-Your-Work
