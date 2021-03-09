@@ -6,9 +6,20 @@ Using GNU Pretty Good Privacy (PGP) with YubiKey
 
     brew install gpg
 
-## Assumption
+## Creating Keys
 
-This documentation assumes you have a set of existing keys and is now setting it up with YubiKey.
+If you do not have an existing GPG keychain, you will need to create one.
+You can follow [this guide](https://wiki.archlinux.org/index.php/GnuPG#Create_a_key_pair).
+
+Some quick snippets:
+
+    gpg --expert --full-gen-key
+    xx # (9) ECC and ECC
+    xx # (1) Curve 25519
+    (this should create a secret key and also an encryption key)
+
+## Listing Keys
+
 To list keys in your public key ring:
     
     gpg --list-keys
