@@ -191,12 +191,6 @@ You can check the signature via:
 1. Switch to the `.gnupg` keychain where the secret key exists
 1. [Add a new signing key](#add-a-new-subkey)
 1. [Move the new key to the card](#moving-key-to-card)
-1. Revoke the subkey
-
-        gpg --expert --edit-key <uid>
-        key X
-        revkey
-
 1. Revoke the signature
 
         gpg --expert --edit-key <uid>
