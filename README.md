@@ -33,12 +33,13 @@ The ID starts after the "/". Given `rsa4096/34393DA618A60674`, the key ID is `34
     
 ### Symbols and etc
 
-- `pub`: public key
-- `sec`: secret key
-- `sub`: sub key 
-- `ssb`: secret sub key
+- `pub` - public key
+- `sub` - subkey
+- `sec` - private (or secret) key
+- `ssb` - private (or secret) subkey
+- `uid` - user id
 - `...>`: key stored on smart card
-- `uid`: User ID
+- `...#`: key is unusable - likely secret key missing
 
 ## Edit GPG database
 
