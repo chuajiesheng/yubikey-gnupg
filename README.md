@@ -141,6 +141,12 @@ Then import the public key chain:
 
     gpg --export-ssh-key <uid>
     
+## Changing expiry date of a key
+
+    gpg --expert --edit-key <uid>
+    key X
+    expire
+
 ## Setup your MacOS environment to use GPG key for SSH authentication
     
 Create the files as follows:
@@ -179,6 +185,30 @@ You can check the signature via:
 
     gpg --armor --export <key id>
     (copy from -----BEGIN PGP PUBLIC KEY BLOCK----- to -----END PGP PUBLIC KEY BLOCK-----)
+
+## What to do when your commit signing key expires
+
+1. Switch to the `.gnupg` keychain where the secret key exists
+1. [Add a new signing key](#add-a-new-subkey)
+1. [Move the new key to the card](#moving-key-to-card)
+1. Revoke the subkey
+
+        gpg --expert --edit-key <uid>
+        key X
+        revkey
+
+1. Revoke the signature
+
+        gpg --expert --edit-key <uid>
+        key X
+        revsig
+1. Export the public key chain for use in the later steps
+
+        gpg --armor --export > <some path>
+
+1. Switch to the `.gnupg` without the secret key
+1. [Import from Yubikey](#using-yubikey-only)
+
 
 ## Notes
 
